@@ -1,0 +1,177 @@
+/*
+  variables.css — Sistema de tokens de diseño
+  GANESHA LTDA · Sistema de Gestión de Correspondencia
+
+  Paleta premium: lino cálido + azul noche + oro viejo.
+  Tema oscuro vía [data-theme="dark"] sobre <html>.
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  /* ── Tipografía ─────────────────────────────────────────────── */
+  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: ui-monospace, 'Cascadia Code', Consolas, monospace;
+
+  /* ── Paleta premium ─────────────────────────────────────────── */
+  --lino:      #F4F3EF;   /* Fondo principal */
+  --noche:     #141E26;   /* Sidebar */
+  --oro:       #C5A880;   /* Acento principal */
+  --oro-hover: #B3986F;   /* Hover del acento */
+  --oro-suave: #EFE4CE;   /* Acento secundario / badges suaves */
+  --grafito:   #232B32;   /* Texto principal */
+  --pizarra:   #75828D;   /* Texto secundario */
+  --hilo:      #E2E1DA;   /* Bordes y detalles */
+
+  --accent:           var(--oro);
+  --accent-hover:     var(--oro-hover);
+  --accent-soft:      var(--oro-suave);
+  --accent-soft-2:    #F7F1E4;
+  --accent-contrast:  var(--grafito);   /* Texto legible sobre oro (AA ≈ 6.2:1) */
+
+  /* ── Estado (semántica conservada) ──────────────────────────── */
+  --success: #1E7A45;  --success-bg: #EBF5EE;  --success-border: #BFE3CC;  --success-dark: #14532D;
+  --warning: #B07A2A;  --warning-bg: #FAF3E3;  --warning-border: #ECDCB4;  --warning-dark: #6E4A10;
+  --danger:  #C0392B;  --danger-bg:  #FAECEA;  --danger-border:  #F0C9C4;  --danger-dark:  #7C231A;
+  --info:    #3E6B85;  --info-bg:    #EDF2F5;  --info-border:    #C4D5DF;  --info-dark:    #24475A;
+
+  /* ── Alias de acento para compatibilidad con componentes ────── */
+  --primary:        var(--accent);
+  --primary-hover:  var(--accent-hover);
+  --primary-light:  var(--accent);
+  --primary-bg:     var(--accent-soft-2);
+  --primary-border: var(--accent-soft);
+  --text-link:      #93763F;
+  --border-focus:   var(--accent);
+
+  /* Alias heredados usados en JSX (antes sin definir) */
+  --primary-color:        var(--accent);
+  --primary-color-hover:  var(--accent-hover);
+  --primary-subtle:       var(--accent-soft-2);
+
+  /* ── Superficies (tema claro) ───────────────────────────────── */
+  --bg-app:            var(--lino);
+  --bg-card:           #FFFFFF;
+  --bg-card-hover:     #FAF9F5;
+  --bg-input:          #FFFFFF;
+  --bg-input-disabled: #EFEDE7;
+  --bg-subtle:         #EDECE6;
+  --bg-navbar:         rgba(244, 243, 239, 0.85);
+
+  /* ── Textos (tema claro) ────────────────────────────────────── */
+  --text-primary:   var(--grafito);
+  --text-secondary: #4E5861;
+  --text-muted:     var(--pizarra);
+  --text-disabled:  #A8B1B9;
+  --text-on-primary: var(--grafito);
+
+  /* ── Bordes ─────────────────────────────────────────────────── */
+  --border-color:  var(--hilo);
+  --border-strong: #D2D0C6;
+
+  /* ── Sidebar ────────────────────────────────────────────────── */
+  --bg-sidebar:        var(--noche);
+  --bg-sidebar-header: var(--noche);
+  --bg-sidebar-footer: var(--noche);
+  --bg-sidebar-hover:  #1D2833;
+  --bg-sidebar-active: #243040;
+  --text-sidebar:        #FFFFFF;
+  --text-sidebar-muted:  #8B95A2;
+  --text-sidebar-active:  #FFFFFF;
+  --border-sidebar:      #232E39;
+
+  /* ── Sombras cálidas, muy sutiles ───────────────────────────── */
+  --shadow-xs: 0 1px 2px rgba(35, 43, 50, 0.04);
+  --shadow-sm: 0 1px 3px rgba(35, 43, 50, 0.05), 0 1px 2px rgba(35, 43, 50, 0.03);
+  --shadow-md: 0 4px 12px rgba(35, 43, 50, 0.06), 0 1px 3px rgba(35, 43, 50, 0.04);
+  --shadow-lg: 0 12px 28px rgba(35, 43, 50, 0.08), 0 4px 8px rgba(35, 43, 50, 0.04);
+  --shadow-xl: 0 24px 48px rgba(35, 43, 50, 0.12);
+  --shadow-accent: 0 6px 16px rgba(197, 168, 128, 0.35);
+
+  /* ── Radios ─────────────────────────────────────────────────── */
+  --radius-xs:   6px;
+  --radius-sm:   8px;
+  --radius-md:   10px;
+  --radius-lg:   12px;
+  --radius-xl:   16px;
+  --radius-2xl:  20px;
+  --radius-full: 9999px;
+
+  /* ── Transiciones ───────────────────────────────────────────── */
+  --transition-fast: all 0.14s ease;
+  --transition-base: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: all 0.32s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* ── Layout ─────────────────────────────────────────────────── */
+  --sidebar-width: 264px;
+  --navbar-height: 68px;
+  --page-padding:  28px;
+
+  /* ── Badges de estado (rampa cálida) ────────────────────────── */
+  --status-recibido-bg:  #EFE4CE;  --status-recibido-text:  #6E5626;
+  --status-revision-bg:  #EDECE6;  --status-revision-text:  #4E5861;
+  --status-derivado-bg:  #F3E7CC;  --status-derivado-text:  #7A5C1E;
+  --status-proceso-bg:   #F6ECD4;  --status-proceso-text:   #7A5C1E;
+  --status-atendido-bg:  #E4F2E8;  --status-atendido-text:  #1B6B33;
+  --status-archivado-bg: #EDECE6;  --status-archivado-text: #75828D;
+  --status-emitido-bg:   #E7ECEF;  --status-emitido-text:   #33454E;
+  --status-anulado-bg:   #F9E9E7;  --status-anulado-text:   #96301F;
+
+  --priority-baja-bg:    #EDECE6;  --priority-baja-text:    #75828D;
+  --priority-normal-bg:  #EFE4CE;  --priority-normal-text:  #6E5626;
+  --priority-alta-bg:    #F5E3C2;  --priority-alta-text:    #8A5A16;
+  --priority-urgente-bg: #F9E9E7;  --priority-urgente-text: #96301F;
+}
+
+/* ============================================================
+   TEMA OSCURO (derivado nocturno de la misma paleta)
+   ============================================================ */
+:root[data-theme='dark'] {
+  --bg-app:            #10151B;
+  --bg-card:           #1A222B;
+  --bg-card-hover:     #202935;
+  --bg-input:          #141B23;
+  --bg-input-disabled: #1B222B;
+  --bg-subtle:         #202935;
+  --bg-navbar:         rgba(26, 34, 43, 0.85);
+
+  --text-primary:   #EDE9E2;
+  --text-secondary: #B9C2CB;
+  --text-muted:     #8B95A2;
+  --text-disabled:  #5A6470;
+  --text-link:      #C5A880;
+
+  --border-color:  #2A333D;
+  --border-strong: #38424D;
+
+  --accent-soft-2: #2A2417;
+
+  --primary-bg:     #2A2417;
+  --primary-border: #4A3E24;
+
+  --success-bg: #122419;  --success-border: #1F4A2D;  --success-dark: #8BD5A2;
+  --warning-bg: #282114;  --warning-border: #4A3D1C;  --warning-dark: #EAC77E;
+  --danger-bg:  #281414;  --danger-border:  #4A2222;  --danger-dark:  #EE9C90;
+  --info-bg:    #14202A;  --info-border:    #24404F;  --info-dark:    #8FC3DC;
+
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.35), 0 1px 2px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 12px 28px rgba(0, 0, 0, 0.45);
+  --shadow-xl: 0 24px 48px rgba(0, 0, 0, 0.55);
+  --shadow-accent: 0 6px 18px rgba(197, 168, 128, 0.22);
+
+  --status-recibido-bg: #2E2716;  --status-recibido-text: #E3C98F;
+  --status-revision-bg: #222A33;  --status-revision-text: #B9C2CB;
+  --status-derivado-bg: #2C2515;  --status-derivado-text: #DDBB7E;
+  --status-proceso-bg:  #29220F;  --status-proceso-text:  #D3AC68;
+  --status-atendido-bg: #142A1D;  --status-atendido-text: #8BD5A2;
+  --status-archivado-bg: #20272F;  --status-archivado-text: #9AA4AF;
+  --status-emitido-bg:  #1A2530;  --status-emitido-text:  #9DBACB;
+  --status-anulado-bg:  #2B1715;  --status-anulado-text:  #EE9C90;
+
+  --priority-baja-bg:    #20272F;  --priority-baja-text:    #9AA4AF;
+  --priority-normal-bg:  #2E2716;  --priority-normal-text:  #E3C98F;
+  --priority-alta-bg:    #33260F;  --priority-alta-text:    #E8BE76;
+  --priority-urgente-bg: #2B1715;  --priority-urgente-text: #EE9C90;
+}

@@ -1,0 +1,237 @@
+/* ============================================================
+   DIRECTORIO DE USUARIOS Y ROLES - SISTEMA DE CORRESPONDENCIA
+   Paleta: #F4F3EF (lino), #141E26 (noche), #C5A880 (oro champán),
+           #232B32 (grafito), #75828D (pizarra), #E2E1DA (hilo)
+   ============================================================ */
+
+.usuarios-container {
+  max-width: 1400px;
+}
+
+/* Encabezado */
+.usuarios-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.usuarios-header-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.usuarios-header-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: var(--noche, #141E26);
+  color: var(--oro, #C5A880);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(20, 30, 38, 0.12);
+  flex-shrink: 0;
+}
+
+.usuarios-title-text h2 {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.usuarios-title-text p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin: 4px 0 0;
+}
+
+/* Barra de Filtros y Búsqueda */
+.usuarios-search-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 18px 22px;
+  margin-bottom: 24px;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.usuarios-search-card:hover {
+  border-color: var(--border-strong);
+  box-shadow: var(--shadow-md);
+}
+
+.usuarios-search-form {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* Avatar con Inicial */
+.usuario-avatar-initial {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--primary-bg);
+  color: var(--oro, #C5A880);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.88rem;
+  flex-shrink: 0;
+  border: 1px solid var(--primary-border);
+}
+
+/* Badges de Rol Asignado */
+.badge-rol {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  line-height: 1.4;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.badge-rol:hover {
+  transform: translateY(-1px);
+}
+
+.badge-rol-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+/* Rol: Administrador */
+.badge-rol-admin {
+  background-color: var(--primary-bg);
+  color: var(--oro, #C5A880);
+  border: 1px solid var(--primary-border);
+  box-shadow: var(--shadow-xs);
+}
+
+/* Roles operativos: Operador y Secretaria */
+.badge-rol-operador {
+  background-color: var(--info-bg);
+  color: var(--info-dark);
+  border: 1px solid var(--info-border);
+  box-shadow: var(--shadow-xs);
+}
+
+/* Rol por defecto */
+.badge-rol-default {
+  background-color: var(--bg-subtle);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+}
+
+/* ============================================================
+   BOTONES DE ACCIÓN DIFERENCIADOS POR COLOR
+   ============================================================ */
+.btn-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border-radius: 6px;
+  cursor: pointer;
+  background: var(--bg-card);
+  transition: all 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: var(--shadow-xs);
+}
+
+.btn-action:focus {
+  outline: none;
+}
+
+/* 1. Botón Editar */
+.btn-action-edit {
+  background-color: var(--info-bg);
+  border: 1px solid var(--info-border);
+  color: var(--info-dark);
+}
+
+.btn-action-edit:hover {
+  background-color: #2563eb;
+  border-color: #1d4ed8;
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 6px rgba(37, 99, 235, 0.28);
+}
+
+/* 2. Botón Restablecer Contraseña */
+.btn-action-key {
+  background-color: var(--primary-bg);
+  border: 1px solid var(--primary-border);
+  color: var(--oro, #C5A880);
+}
+
+.btn-action-key:hover {
+  background-color: var(--oro, #C5A880);
+  border-color: var(--oro-hover, #B3986F);
+  color: var(--noche, #141E26);
+  transform: translateY(-1px);
+  box-shadow: 0 3px 6px rgba(197, 168, 128, 0.35);
+}
+
+/* 3. Botón Desactivar Usuario */
+.btn-action-deactivate {
+  background-color: var(--warning-bg);
+  border: 1px solid var(--warning-border);
+  color: var(--warning-dark);
+}
+
+.btn-action-deactivate:hover {
+  background-color: #ea580c;
+  border-color: #c2410c;
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 6px rgba(234, 88, 12, 0.28);
+}
+
+/* 3. Botón Activar Usuario */
+.btn-action-activate {
+  background-color: var(--success-bg);
+  border: 1px solid var(--success-border);
+  color: var(--success-dark);
+}
+
+.btn-action-activate:hover {
+  background-color: #059669;
+  border-color: #047857;
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 6px rgba(5, 150, 105, 0.28);
+}
+
+/* 4. Botón Eliminar Usuario */
+.btn-action-delete {
+  background-color: var(--danger-bg);
+  border: 1px solid var(--danger-border);
+  color: var(--danger-dark);
+}
+
+.btn-action-delete:hover {
+  background-color: #dc2626;
+  border-color: #b91c1c;
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 6px rgba(220, 38, 38, 0.28);
+}

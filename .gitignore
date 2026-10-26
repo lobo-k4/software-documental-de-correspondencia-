@@ -1,0 +1,59 @@
+# Environment files (keep the example template)
+.env
+.env.*
+!.env.example
+
+# Dependencies
+**/node_modules/
+
+# Generated test coverage and build output
+coverage/
+**/coverage/
+dist/
+dist-ssr/
+
+# Operating system files
+Thumbs.db
+.DS_Store
+*.stackdump
+
+# Editor configuration
+.vscode/
+.idea/
+
+# Documents and reports in the project root
+/*.docx
+/*.pdf
+/*.xlsx
+/*.pptx
+
+# Documents and reports in documentation folders
+**/docs/**/*.docx
+**/docs/**/*.pdf
+**/docs/**/*.xlsx
+**/docs/**/*.pptx
+**/documentation/**/*.docx
+**/documentation/**/*.pdf
+**/documentation/**/*.xlsx
+**/documentation/**/*.pptx
+**/documentacion/**/*.docx
+**/documentacion/**/*.pdf
+**/documentacion/**/*.xlsx
+**/documentacion/**/*.pptx
+**/informes/**/*.docx
+**/informes/**/*.pdf
+**/informes/**/*.xlsx
+**/informes/**/*.pptx
+**/uploads/**/*.docx
+**/uploads/**/*.pdf
+**/uploads/**/*.xlsx
+**/uploads/**/*.pptx
+
+# Temporary files
+*.log
+*.tmp
+*.swp
+
+# Uploaded files (retain the directory marker)
+/backend/uploads/*
+!/backend/uploads/.gitkeep

@@ -1,0 +1,56 @@
+/*
+  App.css — Layout principal de la aplicación
+  Estilos complementarios al global.css
+*/
+
+/* ============================================================
+   LAYOUT DE APP
+   ============================================================ */
+.app-layout {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  background-color: var(--bg-app);
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-width: 0;
+  background-color: var(--bg-app);
+}
+
+.page-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0;
+  background-color: var(--bg-app);
+}
+
+/* ============================================================
+   ESTADO DE CARGA DE APP
+   ============================================================ */
+.app-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: var(--bg-app);
+  gap: 16px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 768px) {
+  .page-content {
+    padding: 0;
+  }
+}

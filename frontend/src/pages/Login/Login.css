@@ -1,0 +1,274 @@
+/*
+  Login.css — Estilos de la pantalla de inicio de sesión
+*/
+
+/* ── Layout de dos paneles ────────────────────────────────── */
+.login-page {
+  display: flex;
+  min-height: 100vh;
+  background: var(--bg-app);
+}
+
+/* ── Panel izquierdo (decorativo elegante) ─────────────────── */
+.login-brand {
+  flex: 0 0 440px;
+  background: linear-gradient(160deg, #0D1821 0%, #122233 45%, #1A2E42 80%, #0D1821 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px;
+  position: relative;
+  overflow: hidden;
+}
+
+
+
+/* login-brand-deco y login-brand-glow — sin decoración activa */
+.login-brand-deco {
+  display: none;
+}
+
+/* Brillo suave central (efecto de iluminación muy sutil) */
+.login-brand-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(196, 158, 76, 0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* ── Contenido del panel izquierdo ─────────────────────────── */
+.login-brand-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 340px;
+  color: #FFFFFF;
+  text-align: center;
+  animation: page-enter var(--motion-slow) var(--motion-ease-out) both;
+}
+
+.login-brand-name {
+  font-size: 2.1rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  margin: 0 0 4px;
+  color: #FFFFFF;
+  text-transform: uppercase;
+}
+
+.login-brand-tagline {
+  font-size: 0.78rem;
+  color: var(--oro, #C49E4C);
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  margin: 0;
+  font-weight: 600;
+}
+
+.login-brand-divider {
+  width: 80px;
+  height: 2px;
+  background: linear-gradient(to right, transparent, var(--oro, #C49E4C), transparent);
+  border-radius: 2px;
+  margin: 20px auto;
+}
+
+.login-brand-desc {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.72);
+  line-height: 1.7;
+  margin-bottom: 32px;
+  letter-spacing: 0.01em;
+}
+
+.login-brand-features {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  text-align: left;
+  margin-top: 8px;
+}
+
+.login-feature-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.62);
+  line-height: 1.4;
+}
+
+.login-feature-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--oro, #C49E4C);
+  flex-shrink: 0;
+  box-shadow: 0 0 6px rgba(196, 158, 76, 0.7);
+}
+
+/* Footer del panel izquierdo */
+.login-brand-footer {
+  position: absolute;
+  bottom: 24px;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  font-size: 0.68rem;
+  color: rgba(196, 158, 76, 0.65);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.login-brand-footer-dot {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: rgba(196, 158, 76, 0.5);
+}
+
+/* ── Panel derecho (formulario) ───────────────────────────── */
+.login-form-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 24px;
+  background: var(--bg-app);
+}
+
+.login-form-box {
+  width: 100%;
+  max-width: 420px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-lg);
+  padding: 40px 38px 34px;
+  animation: page-enter var(--motion-slow) var(--motion-ease-out) both;
+}
+
+.login-form-header {
+  margin-bottom: 28px;
+}
+
+.login-form-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.login-form-subtitle {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+
+/* Password wrapper */
+.login-password-wrapper {
+  position: relative;
+}
+
+.login-password-wrapper .form-input {
+  padding-right: 40px;
+}
+
+.login-password-toggle {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 2px;
+  border-radius: var(--radius-xs);
+  transition: var(--transition-fast);
+}
+
+.login-password-toggle:hover {
+  color: var(--text-primary);
+}
+
+/* Botón de submit */
+.login-submit-btn {
+  width: 100%;
+  padding: 13px 18px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  justify-content: center;
+  margin-top: 4px;
+}
+
+/* Acceso rápido */
+.login-quick-access {
+  margin-top: 30px;
+  padding-top: 22px;
+  border-top: 1px solid var(--border-color);
+}
+
+.login-quick-label {
+  display: block;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  font-weight: 700;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.login-quick-buttons {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.login-quick-buttons .btn-secondary {
+  font-size: 0.75rem;
+  padding: 7px 12px;
+}
+
+/* Pie del formulario */
+.login-footer {
+  margin-top: 26px;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+/* ── Responsive ───────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .login-page { flex-direction: column; }
+  .login-brand {
+    flex: none;
+    padding: 40px 24px;
+    min-height: 200px;
+  }
+  .login-brand-inner { max-width: 100%; }
+  .login-brand-features { display: none; }
+  .login-form-panel { padding: 32px 20px; }
+  .login-form-box { padding: 30px 24px 26px; }
+}
+
+@media (max-width: 480px) {
+  .login-brand { padding: 32px 20px; }
+  .login-brand-name { font-size: 1.6rem; }
+  .login-form-panel { padding: 24px 16px; }
+  .login-form-box { padding: 26px 20px 22px; }
+}

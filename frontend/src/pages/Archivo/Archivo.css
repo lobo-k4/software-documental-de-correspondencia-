@@ -1,0 +1,225 @@
+/*
+  Archivo.css — Estilos del módulo de Archivo Digital
+  GANESHA LTDA · Sistema de Gestión de Correspondencia
+*/
+
+.archivo-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* ── Encabezado ───────────────────────────────────────────── */
+.archivo-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.archivo-header-info h2 {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+  margin: 0 0 4px 0;
+}
+
+.archivo-header-info p {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* ── Barra de Filtros ─────────────────────────────────────── */
+.archivo-filters-card {
+  padding: 16px 20px;
+  margin-bottom: 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xs);
+}
+
+.archivo-filters-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.archivo-search-wrap {
+  flex: 1 1 300px;
+}
+
+.archivo-select-wrap {
+  width: 200px;
+}
+
+/* ── Tabla de Archivo ─────────────────────────────────────── */
+.archivo-table-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+.archivo-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.archivo-table th {
+  background: var(--bg-subtle);
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 14px 18px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.archivo-table td {
+  padding: 14px 18px;
+  font-size: 0.875rem;
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--border-color);
+  vertical-align: middle;
+  transition: background-color var(--transition-fast);
+}
+
+.archivo-table tr:hover td {
+  background-color: var(--bg-card-hover);
+}
+
+.archivo-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* Nombre de archivo con icono */
+.archivo-name-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+}
+
+.archivo-ext-badge {
+  display: inline-block;
+  padding: 3px 8px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  font-family: var(--font-mono, monospace);
+  border-radius: var(--radius-xs);
+  background: var(--bg-subtle);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+  text-transform: uppercase;
+}
+
+.archivo-code-badge {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-color);
+  padding: 3px 8px;
+  border-radius: var(--radius-xs);
+}
+
+/* Acciones */
+.archivo-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-archivo-action {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-color);
+  background: var(--bg-card);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--text-muted);
+  transition: all var(--transition-fast);
+}
+
+.btn-archivo-action:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-xs);
+}
+
+.btn-archivo-action.view:hover {
+  background: var(--info-bg);
+  border-color: var(--info-border);
+  color: var(--info-dark);
+}
+
+.btn-archivo-action.download:hover {
+  background: var(--success-bg);
+  border-color: var(--success-border);
+  color: var(--success-dark);
+}
+
+.btn-archivo-action.delete:hover {
+  background: var(--danger-bg);
+  border-color: var(--danger-border);
+  color: var(--danger-dark);
+}
+
+.btn-archivo-action.qr:hover {
+  background: var(--accent-soft-2);
+  border-color: var(--accent-soft);
+  color: var(--accent-contrast);
+}
+
+/* Paginación */
+.archivo-pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  background: var(--bg-card);
+  border-top: 1px solid var(--border-color);
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+.archivo-pagination-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ── Modal Grid de Detalle ────────────────────────────────── */
+.archivo-detail-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.archivo-detail-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 14px;
+  background: var(--bg-subtle);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-color);
+  font-size: 0.875rem;
+}
+
+.archivo-detail-item strong {
+  color: var(--text-muted);
+  font-size: 0.8125rem;
+}

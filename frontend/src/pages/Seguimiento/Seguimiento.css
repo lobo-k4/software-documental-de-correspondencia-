@@ -1,0 +1,185 @@
+/*
+  Seguimiento.css — Estilos del módulo de Seguimiento
+  GANESHA LTDA · Sistema de Gestión de Correspondencia
+*/
+
+.seguimiento-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ── Encabezado ───────────────────────────────────────────── */
+.seguimiento-header-page {
+  margin-bottom: 24px;
+}
+
+.seguimiento-header-page h2 {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+  margin: 0 0 4px 0;
+}
+
+.seguimiento-header-page p {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* ── Tarjeta de Búsqueda ──────────────────────────────────── */
+.seguimiento-search-card {
+  padding: 24px;
+  margin-bottom: 24px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.seguimiento-search-label {
+  display: block;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+
+.seguimiento-search-row {
+  display: flex;
+  gap: 12px;
+}
+
+.seguimiento-search-input {
+  flex: 1;
+  font-size: 1rem;
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-color);
+  background: var(--bg-input);
+  color: var(--text-primary);
+  font-family: var(--font-mono, monospace);
+  transition: all var(--transition-fast);
+}
+
+.seguimiento-search-input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(197, 168, 128, 0.2);
+}
+
+.seguimiento-btn-track {
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 0.9375rem;
+}
+
+/* ── Tarjeta de Resultado ─────────────────────────────────── */
+.seguimiento-result-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  padding: 28px;
+  margin-bottom: 24px;
+  animation: page-enter var(--motion-base) var(--motion-ease-out) both;
+}
+
+.seguimiento-doc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 22px;
+}
+
+.seguimiento-doc-code {
+  font-family: var(--font-mono, monospace);
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--accent-contrast);
+  background: var(--accent-soft);
+  padding: 4px 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--accent);
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+.seguimiento-doc-asunto {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+  line-height: 1.45;
+}
+
+/* Grilla de Metadatos */
+.seguimiento-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.seguimiento-meta-item {
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 12px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.seguimiento-meta-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+
+.seguimiento-meta-val {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* Sección Timeline */
+.seguimiento-timeline-section {
+  padding-top: 10px;
+}
+
+.seguimiento-timeline-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 18px 0;
+}
+
+.seguimiento-timeline-title svg {
+  color: var(--accent);
+}
+
+@media (max-width: 640px) {
+  .seguimiento-search-row {
+    flex-direction: column;
+  }
+  .seguimiento-btn-track {
+    width: 100%;
+    justify-content: center;
+    padding: 12px;
+  }
+  .seguimiento-doc-header {
+    flex-direction: column;
+  }
+}

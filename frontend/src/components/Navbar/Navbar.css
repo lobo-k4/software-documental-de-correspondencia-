@@ -1,0 +1,437 @@
+/*
+  Navbar.css — Estilos de la barra de navegación superior
+*/
+
+/* ── Navbar base ──────────────────────────────────────────── */
+.navbar {
+  height: var(--navbar-height);
+  background-color: var(--bg-navbar);
+  backdrop-filter: saturate(180%) blur(12px);
+  -webkit-backdrop-filter: saturate(180%) blur(12px);
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 26px;
+  gap: 16px;
+  flex-shrink: 0;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  transition: background-color var(--transition-base), border-color var(--transition-base);
+}
+
+/* ── Título de página ─────────────────────────────────────── */
+.navbar-title {
+  flex: 1;
+  min-width: 0;
+}
+
+.navbar-page-title {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  letter-spacing: -0.015em;
+}
+
+/* ── Acciones del navbar ──────────────────────────────────── */
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.navbar-separator {
+  width: 1px;
+  height: 24px;
+  background-color: var(--border-color);
+}
+
+/* ── Botón de ícono ───────────────────────────────────────── */
+.navbar-icon-btn {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-color);
+  background: var(--bg-card);
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.navbar-icon-btn:hover {
+  border-color: var(--border-strong);
+  color: var(--text-primary);
+  background: var(--bg-card-hover);
+}
+
+/* Badge de notificaciones */
+.notif-badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  min-width: 17px;
+  height: 17px;
+  padding: 0 4px;
+  border-radius: var(--radius-full);
+  background: var(--danger);
+  color: #ffffff;
+  font-size: 0.65rem;
+  font-weight: 700;
+  line-height: 17px;
+  text-align: center;
+  border: 2px solid var(--bg-navbar);
+}
+
+/* ── Panel de notificaciones ──────────────────────────────── */
+.navbar-notifications {
+  position: relative;
+}
+
+.notif-panel {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  width: 360px;
+  max-width: calc(100vw - 24px);
+  max-height: min(460px, calc(100vh - 80px));
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xl);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 200;
+}
+
+.notif-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border-color);
+  background: var(--bg-subtle);
+}
+
+.notif-title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.notif-count {
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  border-radius: var(--radius-full);
+  background: var(--accent);
+  color: var(--accent-contrast);
+  font-size: 0.65rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.notif-mark-all {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.75rem;
+  color: var(--text-link);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: var(--radius-xs);
+  transition: var(--transition-fast);
+}
+
+.notif-mark-all:hover { background: var(--primary-bg); }
+.notif-mark-all.disabled { color: var(--text-muted); cursor: not-allowed; }
+
+.notif-error {
+  padding: 8px 16px;
+  font-size: 0.775rem;
+  color: var(--danger-dark);
+  background: var(--danger-bg);
+  margin: 0;
+}
+
+.notif-list {
+  overflow-y: auto;
+  flex: 1;
+}
+
+.notif-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 36px 24px;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.notif-empty p {
+  font-size: 0.8125rem;
+  margin: 0;
+}
+
+/* Ítem de notificación */
+.notif-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  width: 100%;
+  padding: 11px 16px;
+  border: none;
+  border-bottom: 1px solid var(--border-color);
+  background: var(--bg-card);
+  cursor: pointer;
+  text-align: left;
+  transition: background-color 0.15s ease;
+}
+
+.notif-item:hover { background: var(--bg-card-hover); }
+.notif-item.unread { background: var(--accent-soft-2); }
+.notif-item.unread:hover { background: var(--primary-bg); }
+.notif-item:last-child { border-bottom: none; }
+
+.notif-item-dot {
+  width: 10px;
+  flex-shrink: 0;
+  padding-top: 4px;
+  display: flex;
+  justify-content: center;
+}
+
+.unread-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+  display: block;
+}
+
+.notif-item-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.notif-item-title {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 3px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.notif-item-msg {
+  display: block;
+  font-size: 0.775rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+  margin-bottom: 4px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.notif-item-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.notif-item-code {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  color: var(--status-recibido-text);
+  background: var(--primary-bg);
+  padding: 2px 6px;
+  border-radius: var(--radius-xs);
+}
+
+.notif-item-time {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.notif-item-arrow {
+  color: var(--text-muted);
+  flex-shrink: 0;
+  margin-top: 2px;
+  opacity: 0.5;
+}
+
+/* ── Usuario ──────────────────────────────────────────────── */
+.navbar-user {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.navbar-user-button {
+  padding: 4px 7px;
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.navbar-user-button:hover {
+  background: var(--bg-card-hover);
+}
+
+.navbar-user-button:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+.navbar-user-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: #ffffff;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.navbar-user-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar-user-name {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  white-space: nowrap;
+  line-height: 1.2;
+}
+
+.navbar-user-role {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+/* ── Logout ───────────────────────────────────────────────── */
+.navbar-logout-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 10px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-color);
+  background: var(--bg-card);
+  color: var(--text-secondary);
+  font-size: 0.775rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  white-space: nowrap;
+}
+
+.navbar-logout-btn:hover {
+  background: var(--danger-bg);
+  border-color: var(--danger-border);
+  color: var(--danger);
+}
+
+/* ── Responsive ───────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0 12px 0 56px;
+  }
+
+  .navbar-user-info { display: none; }
+  .navbar-logout-btn span { display: none; }
+  .navbar-logout-btn { padding: 6px 8px; }
+}
+
+@media (max-width: 480px) {
+  .notif-panel {
+    right: -60px;
+    width: calc(100vw - 24px);
+  }
+}
+
+/* ============================================================
+   MODO OSCURO — Panel de Notificaciones
+   ============================================================ */
+:root[data-theme='dark'] .notif-header {
+  background: var(--bg-subtle);
+  border-bottom-color: var(--border-color);
+}
+
+:root[data-theme='dark'] .notif-panel {
+  background: var(--bg-card);
+  border-color: var(--border-color);
+}
+
+:root[data-theme='dark'] .notif-item {
+  background: var(--bg-card);
+  border-bottom-color: var(--border-color);
+}
+
+:root[data-theme='dark'] .notif-item:hover {
+  background: var(--bg-card-hover);
+}
+
+:root[data-theme='dark'] .notif-item.unread {
+  background: var(--accent-soft-2);
+}
+
+:root[data-theme='dark'] .notif-item.unread:hover {
+  background: var(--primary-bg);
+}
+
+:root[data-theme='dark'] .notif-item-title {
+  color: var(--text-primary);
+}
+
+:root[data-theme='dark'] .notif-item-msg {
+  color: var(--text-secondary);
+}
+
+:root[data-theme='dark'] .notif-item-code {
+  background: var(--primary-bg);
+  color: var(--status-recibido-text);
+}
+
+:root[data-theme='dark'] .notif-item-time {
+  color: var(--text-muted);
+}
+
+:root[data-theme='dark'] .notif-empty {
+  color: var(--text-muted);
+}

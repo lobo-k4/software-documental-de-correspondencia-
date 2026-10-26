@@ -1,0 +1,216 @@
+/*
+  Derivaciones.css — Estilos del módulo de Derivaciones
+  GANESHA LTDA · Sistema de Gestión de Correspondencia
+*/
+
+.derivaciones-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* ── Encabezado ───────────────────────────────────────────── */
+.derivaciones-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.derivaciones-header-info h2 {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+  margin: 0 0 4px 0;
+}
+
+.derivaciones-header-info p {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* ── Filtros ──────────────────────────────────────────────── */
+.derivaciones-filters-card {
+  padding: 16px 20px;
+  margin-bottom: 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xs);
+}
+
+.derivaciones-filters-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.derivaciones-search-wrap {
+  flex: 1 1 300px;
+  position: relative;
+}
+
+.derivaciones-search-wrap .form-input {
+  width: 100%;
+}
+
+.derivaciones-filter-select {
+  width: 220px;
+}
+
+/* ── Tabla de Derivaciones ────────────────────────────────── */
+.derivaciones-table-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+.derivaciones-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.derivaciones-table th {
+  background: var(--bg-subtle);
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 14px 18px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.derivaciones-table td {
+  padding: 14px 18px;
+  font-size: 0.875rem;
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--border-color);
+  vertical-align: middle;
+  transition: background-color var(--transition-fast);
+}
+
+.derivaciones-table tr:hover td {
+  background-color: var(--bg-card-hover);
+}
+
+.derivaciones-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* Tag de Código */
+.derivaciones-code {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-color);
+  padding: 3px 8px;
+  border-radius: var(--radius-xs);
+  display: inline-block;
+}
+
+/* Botones de Acción */
+.derivaciones-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-derivacion-action {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-color);
+  background: var(--bg-card);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--text-muted);
+  transition: all var(--transition-fast);
+}
+
+.btn-derivacion-action:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-xs);
+}
+
+.btn-derivacion-action.view:hover {
+  background: var(--info-bg);
+  border-color: var(--info-border);
+  color: var(--info-dark);
+}
+
+.btn-derivacion-action.status:hover {
+  background: var(--warning-bg);
+  border-color: var(--warning-border);
+  color: var(--warning-dark);
+}
+
+.btn-derivacion-action.derive:hover {
+  background: var(--accent-soft-2);
+  border-color: var(--accent-soft);
+  color: var(--accent-contrast);
+}
+
+/* ── Detalle en Modal ─────────────────────────────────────── */
+.derivacion-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.derivacion-detail-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 14px;
+  background: var(--bg-subtle);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-color);
+}
+
+.derivacion-detail-label {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.derivacion-detail-value {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  text-align: right;
+  max-width: 60%;
+}
+
+.derivacion-detail-obs {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.derivacion-detail-obs .derivacion-detail-value {
+  text-align: left;
+  max-width: 100%;
+}
+
+/* ── Modal Footer ─────────────────────────────────────────── */
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-color);
+}

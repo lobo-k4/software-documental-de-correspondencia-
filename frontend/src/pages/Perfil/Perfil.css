@@ -1,0 +1,452 @@
+.profile-page {
+  max-width: 1180px;
+}
+
+.profile-page-header {
+  margin-bottom: 22px;
+}
+
+.profile-page-header .page-title {
+  gap: 9px;
+}
+
+.profile-card {
+  display: grid;
+  grid-template-columns: minmax(230px, 0.78fr) minmax(0, 1.7fr);
+  overflow: hidden;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.profile-photo-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 36px 24px;
+  text-align: center;
+  background: linear-gradient(180deg, #ffffff 0%, #fbfaf8 100%);
+  border-right: 1px solid var(--border-color);
+}
+
+.profile-photo-wrap {
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.profile-photo-picker {
+  display: block;
+  position: relative;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+}
+
+.profile-photo-avatar {
+  width: 132px;
+  height: 132px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 3px solid var(--oro, #C5A880);
+  border-radius: 50%;
+  background: var(--noche, #141E26);
+  color: #ffffff;
+  font-size: 2.4rem;
+  font-weight: 700;
+  box-shadow: 0 4px 16px rgba(20, 30, 38, 0.10);
+}
+
+.profile-photo-avatar img,
+.navbar-user-avatar img,
+.sidebar-user-avatar img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.profile-photo-camera {
+  position: absolute;
+  right: 4px;
+  bottom: 5px;
+  display: flex;
+  width: 32px;
+  height: 32px;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  background: var(--noche, #141E26);
+  color: var(--oro, #C5A880);
+  transition: transform 0.15s ease;
+}
+
+.profile-photo-picker:hover .profile-photo-camera {
+  transform: scale(1.08);
+}
+
+.profile-user-name {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 1.04rem;
+  font-weight: 700;
+}
+
+.profile-user-role {
+  margin-top: 3px;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+.profile-file-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  clip-path: inset(50%);
+}
+
+.profile-change-photo,
+.profile-save-photo {
+  display: inline-flex;
+  min-height: 36px;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 0 16px;
+  border-radius: var(--radius-sm);
+  font: inherit;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.profile-change-photo {
+  margin-top: 17px;
+  background: var(--noche, #141E26);
+  border: 1px solid var(--noche, #141E26);
+  color: #ffffff;
+}
+
+.profile-change-photo:hover {
+  background: #232B32;
+  border-color: #232B32;
+}
+
+.profile-save-photo {
+  background: var(--oro, #C5A880);
+  border: 1px solid #b8996e;
+  color: #ffffff;
+}
+
+.profile-save-photo:hover:not(:disabled) {
+  background: #b5956a;
+}
+
+.profile-photo-hint {
+  margin-top: 8px;
+  color: var(--text-muted);
+  font-size: 0.7rem;
+}
+
+.profile-photo-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.profile-save-photo:disabled,
+.profile-change-photo:disabled,
+.profile-cancel-photo:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+
+.profile-cancel-photo {
+  padding: 3px 8px;
+  border: 0;
+  background: transparent;
+  color: var(--text-secondary);
+  font: inherit;
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+
+.profile-cancel-photo:hover {
+  color: var(--text-primary);
+  text-decoration: underline;
+}
+
+.profile-details-panel {
+  padding: 30px 34px;
+}
+
+.profile-details-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+  padding-bottom: 19px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.profile-details-heading h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.profile-details-heading p {
+  margin-top: 4px;
+  color: var(--text-muted);
+  font-size: 0.78rem;
+}
+
+.profile-readonly-label {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 9px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-full);
+  background: #faf9f6;
+  color: var(--text-secondary);
+  font-size: 0.68rem;
+  font-weight: 600;
+}
+
+.profile-details-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 24px;
+  margin: 0;
+}
+
+.profile-detail {
+  min-width: 0;
+  padding: 17px 0 14px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.profile-detail dt {
+  margin-bottom: 5px;
+  color: var(--text-muted);
+  font-size: 0.72rem;
+  font-weight: 500;
+}
+
+.profile-detail dd {
+  overflow-wrap: anywhere;
+  color: var(--text-primary);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.profile-account-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #15803d;
+  font-size: 0.8rem;
+}
+
+.profile-account-status.is-inactive {
+  color: #b91c1c;
+}
+
+.profile-status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.profile-security-note {
+  margin-top: 19px;
+  color: var(--text-muted);
+  font-size: 0.76rem;
+  line-height: 1.6;
+}
+
+.profile-feedback {
+  margin-top: 13px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.profile-feedback.is-error {
+  color: var(--danger-dark);
+}
+
+.profile-feedback.is-success {
+  color: var(--success, #15803d);
+}
+
+@media (max-width: 760px) {
+  .profile-card {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-photo-panel {
+    border-right: 0;
+    border-bottom: 1px solid var(--border-color);
+    padding: 28px 20px;
+  }
+
+  .profile-details-panel {
+    padding: 24px 20px;
+  }
+}
+
+@media (max-width: 460px) {
+  .profile-details-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-details-heading {
+    flex-direction: column;
+  }
+}
+
+/* ============================================================
+   MODO OSCURO — [data-theme='dark']
+   Sobreescribe todos los colores hardcodeados del Perfil
+   ============================================================ */
+
+/* Tarjeta contenedora */
+:root[data-theme='dark'] .profile-card {
+  background: var(--bg-card);
+  border-color: var(--border-color);
+}
+
+/* Panel izquierdo: fondo oscuro en vez del gradiente blanco */
+:root[data-theme='dark'] .profile-photo-panel {
+  background: linear-gradient(180deg, #1A222B 0%, #141B23 100%);
+  border-right-color: var(--border-color);
+}
+
+/* Avatar: borde oro visible en oscuro */
+:root[data-theme='dark'] .profile-photo-avatar {
+  border-color: var(--oro, #C5A880);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+}
+
+/* Nombre y rol */
+:root[data-theme='dark'] .profile-user-name {
+  color: var(--text-primary);
+}
+
+:root[data-theme='dark'] .profile-user-role {
+  color: var(--text-muted);
+}
+
+/* Botón Cambiar Foto: dorado champán (muy visible en modo oscuro) */
+:root[data-theme='dark'] .profile-change-photo {
+  background: var(--oro, #C5A880);
+  border-color: #b39268;
+  color: #141E26;
+}
+
+:root[data-theme='dark'] .profile-change-photo:hover {
+  background: #d4b98a;
+  border-color: #c5a576;
+  color: #141E26;
+}
+
+/* Botón Guardar Foto */
+:root[data-theme='dark'] .profile-save-photo {
+  background: #3d7a4d;
+  border-color: #2f6340;
+  color: #ffffff;
+}
+
+:root[data-theme='dark'] .profile-save-photo:hover:not(:disabled) {
+  background: #2f6340;
+}
+
+/* Botón Cancelar */
+:root[data-theme='dark'] .profile-cancel-photo {
+  color: var(--text-muted);
+}
+
+:root[data-theme='dark'] .profile-cancel-photo:hover {
+  color: var(--text-primary);
+}
+
+/* Hint de formato */
+:root[data-theme='dark'] .profile-photo-hint {
+  color: var(--text-muted);
+}
+
+/* Panel derecho de detalles */
+:root[data-theme='dark'] .profile-details-panel {
+  background: var(--bg-card);
+}
+
+:root[data-theme='dark'] .profile-details-heading {
+  border-bottom-color: var(--border-color);
+}
+
+:root[data-theme='dark'] .profile-details-heading h3 {
+  color: var(--text-primary);
+}
+
+:root[data-theme='dark'] .profile-details-heading p {
+  color: var(--text-muted);
+}
+
+/* Etiqueta Solo Lectura */
+:root[data-theme='dark'] .profile-readonly-label {
+  background: var(--bg-subtle);
+  border-color: var(--border-color);
+  color: var(--text-secondary);
+}
+
+/* Filas de detalle */
+:root[data-theme='dark'] .profile-detail {
+  border-bottom-color: var(--border-color);
+}
+
+:root[data-theme='dark'] .profile-detail dt {
+  color: var(--text-muted);
+}
+
+:root[data-theme='dark'] .profile-detail dd {
+  color: var(--text-primary);
+}
+
+/* Estado de cuenta activo/inactivo */
+:root[data-theme='dark'] .profile-account-status {
+  color: var(--success-dark, #8BD5A2);
+}
+
+:root[data-theme='dark'] .profile-account-status.is-inactive {
+  color: var(--danger-dark, #EE9C90);
+}
+
+/* Nota de seguridad */
+:root[data-theme='dark'] .profile-security-note {
+  color: var(--text-muted);
+}
+
+/* Feedback éxito en modo oscuro */
+:root[data-theme='dark'] .profile-feedback.is-success {
+  color: var(--success-dark, #8BD5A2);
+}
+
+/* Borde responsivo en oscuro */
+@media (max-width: 760px) {
+  :root[data-theme='dark'] .profile-photo-panel {
+    border-bottom-color: var(--border-color);
+  }
+}
