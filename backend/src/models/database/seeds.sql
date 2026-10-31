@@ -159,6 +159,9 @@ INSERT INTO usuarios (id_usuario, id_rol, id_area, nombre_completo, username, em
   (2, 2, 2, 'Secretaria de Mesa de Partes', 'secretaria01', 'secretaria@correspondencia.local', '$2a$10$qkTY.9hH.sX1IGdBSarBbOJ9G.t86OtX.R.4vC81mPyPA9G4DbOOG', 'Secretaria de Mesa de Partes', TRUE)
 ON CONFLICT (id_usuario) DO NOTHING;
 
+-- Sincronizar los IDs explícitos antes de generar el ID del operador.
+SELECT setval('usuarios_id_usuario_seq', (SELECT MAX(id_usuario) FROM usuarios));
+
 INSERT INTO usuarios (id_rol, id_area, nombre_completo, username, email, password_hash, cargo, activo) VALUES
 (3, 2, 'Operador de Demostración', 'operador01', 'operador@correspondencia.local', '$2a$10$qkTY.9hH.sX1IGdBSarBbOJ9G.t86OtX.R.4vC81mPyPA9G4DbOOG', 'Secretario General', TRUE)
 ON CONFLICT (username) DO NOTHING;
@@ -202,6 +205,9 @@ INSERT INTO plantillas_notas (id_plantilla, codigo, titulo, tipo, cuerpo_plantil
 <p style="text-align: center; margin-top: 50px;">Atentamente,<br><br>___________________________________<br><strong>{{remitente_nombre}}</strong><br>{{remitente_cargo}}</p>',
  '["numero_nota", "fecha", "remitente_nombre", "remitente_cargo", "asunto", "contenido"]'::jsonb, 1)
 ON CONFLICT (codigo) DO NOTHING;
+
+-- Sincronizar los IDs explícitos antes de generar el ID de la siguiente plantilla.
+SELECT setval('plantillas_notas_id_plantilla_seq', (SELECT MAX(id_plantilla) FROM plantillas_notas));
 
 INSERT INTO plantillas_notas (codigo, titulo, tipo, cuerpo_plantilla, variables_requeridas, creado_por) VALUES
 ('GANESHA-NOTA-OFICIAL', 'Nota GANESHA - Auditoría Externa', 'Nota oficial',
